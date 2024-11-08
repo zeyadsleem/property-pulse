@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "@/assets/styles/globals.css";
+import Navbar from "@/components/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,7 +16,7 @@ const geistMono = localFont({
 export const metadata = {
   title: "PropertyPlus | Find the Perfect Rental",
   description: "Find your dream rental property",
-  keywords: "rental, find rentals, find properties"
+  keywords: "rental, find rentals, find properties",
 };
 
 export default function RootLayout({ children }) {
@@ -24,7 +25,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
   );
